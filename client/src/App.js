@@ -6,13 +6,14 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "./App.css";
 
-function App() {
+function App() {	
 	const [user, setUser] = useState(null);
 
 	const getUser = async () => {
 		try {
 			const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
 			const { data } = await axios.get(url, { withCredentials: true });
+			console.log("data",data);
 			setUser(data.user._json);
 		} catch (err) {
 			console.log(err);

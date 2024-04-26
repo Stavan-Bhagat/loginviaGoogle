@@ -5,7 +5,7 @@ router.get("/login/success", (req, res) => {
 	if (req.user) {
 		res.status(200).json({
 			error: false,
-			message: "Successfully Loged In",
+			message: "Successfully Logged In",
 			user: req.user,
 		});
 	} else {
@@ -30,7 +30,7 @@ router.get(
 	})
 );
 
-router.get("/logout", (req, res) => {
+router.get("/logout", (req, res) => {	
 	req.logout();
 	res.redirect(process.env.CLIENT_URL);
 });
